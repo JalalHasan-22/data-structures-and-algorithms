@@ -29,3 +29,5 @@ I have implemented the linked list in a Class approach, where each of the list m
    space => O(1) // only one variable created
 
    ![append](../../assets/insertAfter.jpg)
+
+[table of contents](README.md)
