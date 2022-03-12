@@ -22,3 +22,5 @@ I defined two variables and one new linked list inside this method definition, a
    space => O(1) // only one variable created
 
    ![append](../../assets/Append.jpg)
+
+[Table of content](README.md)
