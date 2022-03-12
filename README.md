@@ -11,3 +11,4 @@
 | 5 Linked-list                  | [readme.md](javascript/linked-list/Readme.md)                           |
 | 6 Linked-list-insertion        | [readme.md](javascript/code-challenges/linked-list-insertion/README.md) |
 | 7 Linked-list-kth              | [readme.md](javascript/code-challenges/linked-list-kth/README.md)       |
+| 8 Linked-list-zip              | [readme.md](javascript/code-challenges/linked-list-zip/README)          |
