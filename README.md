@@ -12,3 +12,4 @@
 | 6 Linked-list-insertion        | [readme.md](javascript/code-challenges/linked-list-insertion/README.md) |
 | 7 Linked-list-kth              | [readme.md](javascript/code-challenges/linked-list-kth/README.md)       |
 | 8 Linked-list-zip              | [readme.md](javascript/code-challenges/linked-list-zip/README)          |
+| 10 Stack & Queue               | [readme.md](javascript/code-challenges/stack-and-queue/README.md)       |

@@ -1,6 +1,6 @@
 "use strict";
 
-const Node = require("../node.js");
+const Node = require("../node");
 const LinkedList = require("../linkedList");
 const Stack = require("../stack");
 const Queue = require("../queue");
