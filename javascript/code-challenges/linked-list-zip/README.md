@@ -23,4 +23,4 @@ I defined two variables and one new linked list inside this method definition, a
 
    ![append](../../assets/Append.jpg)
 
-[Table of content](README.md)
+[Table of content](../../../README.md)
