@@ -15,4 +15,23 @@ function validateBrackets(input) {
   onlyBrackets.map((bracket) => {
     validationStack.push(bracket);
   });
+  let round = 0;
+  let curly = 0;
+  let square = 0;
+
+  for (let i = 0; i <= validationStack.length; i++) {
+    console.log(validationStack.peek());
+    if (validationStack.peek() === "(" || validationStack.peek() === ")")
+      ++round;
+    if (validationStack.peek() === "{" || validationStack.peek() === "}")
+      ++curly;
+    if (validationStack.peek() === "[" || validationStack.peek() === "]")
+      ++round;
+    validationStack.pop();
+  }
+  console.log(round, curly, square);
+  if (round % 2 === 0 && curly % 2 === 0 && square % 2 === 0) return true;
+  return false;
 }
+
+module.exports = validateBrackets;
