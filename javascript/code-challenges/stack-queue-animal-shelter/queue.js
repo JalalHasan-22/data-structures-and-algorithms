@@ -28,7 +28,7 @@ class Queue {
   }
 
   peek() {
-    return this.front;
+    return this.front.value;
   }
 }
 
