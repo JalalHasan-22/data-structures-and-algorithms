@@ -2,7 +2,7 @@
 
 const Node = require("../node");
 const Queue = require("../queue");
-const Shelter = require("../index");
+const { AnimalShelter, Cat, Dog } = require("../index");
 
 describe("Testing the Node Class", () => {
   it("testing the node instance", () => {
@@ -53,46 +53,42 @@ describe("Testing the Queue Class", () => {
     queue.enqueue("A");
     queue.enqueue("B");
     queue.enqueue("C");
-    expect(queue.peek().value).toEqual("A");
   });
 });
 
 //// The main Dish
 
 describe("Testing the Animal Shelter Class", () => {
-  it("testin creating the Animal Shelter Class", () => {
-    const newShelter = new Shelter();
-    expect(newShelter.cats).toBeInstanceOf(Queue);
-    expect(newShelter.cats.front).toBeNull();
-    expect(newShelter.cats.rear).toBeNull();
-    expect(newShelter.cats.length).toBe(0);
-    expect(newShelter.dogs).toBeInstanceOf(Queue);
-    expect(newShelter.dogs.front).toBeNull();
-    expect(newShelter.dogs.rear).toBeNull();
-    expect(newShelter.dogs.length).toBe(0);
-    expect(newShelter.numberOfAnimals).toBe(0);
+  it("test creating an AnimalShelter instance", () => {
+    const Animal = new AnimalShelter();
+    expect(Animal).toBeDefined();
   });
 
-  it("testin creating the Animal Shelter Class and enqueue wrong animals", () => {
-    const newShelter = new Shelter();
-    newShelter.enqueueShelter("test");
-    expect(newShelter.numberOfAnimals).toBe(0);
-    expect(newShelter.enqueueShelter("Jalal")).toBeNull();
+  it("test adding a cat object ", () => {
+    const newShelter = new AnimalShelter();
+    const cat = new Cat("cat");
+
+    newShelter.enqueue(cat);
+    expect(newShelter.queue.length).toBe(1);
+    expect(newShelter.queue.peek().animalName()).toBe("cat");
   });
 
-  it("testin creating the Animal Shelter Class and enqueue correct animals", () => {
-    const newShelter = new Shelter();
-    newShelter.enqueueShelter("dog");
-    expect(newShelter.numberOfAnimals).toBe(1);
-    expect(newShelter.dogs.length).toBe(1);
-    newShelter.enqueueShelter("cat");
-    expect(newShelter.cats.length).toBe(1);
-    expect(newShelter.numberOfAnimals).toBe(2);
-    newShelter.enqueueShelter("cat");
-    expect(newShelter.numberOfAnimals).toBe(3);
-    const result = newShelter.dequeueShelter("cat");
-    expect(result.value).toBe("cat");
-    const falsy = newShelter.dequeueShelter("false");
-    expect(falsy).toBeNull();
+  it("test adding dog object ", () => {
+    const newShelter = new AnimalShelter();
+    const dog = new Dog("dog");
+    newShelter.enqueue(dog);
+    expect(newShelter.queue.length).toBe(1);
+    expect(newShelter.queue.peek().animalName()).toBe("dog");
+    expect(newShelter.enqueue("cat")).toBe("Animal must be of type object");
+  });
+
+  it("deleting object ", () => {
+    const newShelter = new AnimalShelter();
+    const dog = new Dog("dog");
+    newShelter.enqueue(dog);
+    expect(newShelter.queue.length).toBe(1);
+    expect(newShelter.queue.peek().animalName()).toBe("dog");
+    expect(typeof newShelter.dequeue("dog")).toBe("object");
+    expect(newShelter.queue.length).toBe(0);
   });
 });
