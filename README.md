@@ -15,4 +15,4 @@
 | 10 Stack & Queue               | [readme.md](javascript/code-challenges/stack-and-queue/README.md)            |
 | 11 Pseudo Queue                | [readme.md](javascript/code-challenges/stack-queue-pseudo/README.md)         |
 | 12 stack-queue-animal-shelter  | [readme.md](javascript/code-challenges/stack-queue-animal-shelter/README.md) |
-| 13 stack-queue-brackets        | [readme.md]()                                                                |
+| 13 stack-queue-brackets        | [readme.md](javascript/code-challenges/stack-queue-brackets/README.md)       |
