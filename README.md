@@ -16,3 +16,5 @@
 | 11 Pseudo Queue                | [readme.md](javascript/code-challenges/stack-queue-pseudo/README.md)         |
 | 12 stack-queue-animal-shelter  | [readme.md](javascript/code-challenges/stack-queue-animal-shelter/README.md) |
 | 13 stack-queue-brackets        | [readme.md](javascript/code-challenges/stack-queue-brackets/README.md)       |
+| 15 Trees & BST                 | [readme.md](javascript/code-challenges/trees/README.md)                      |
+| 16 Trees-Max                   | [readme.md](javascript/code-challenges/tree-max/README.md)                   |
