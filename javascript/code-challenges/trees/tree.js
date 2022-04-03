@@ -52,6 +52,7 @@ class bst extends binaryTree {
     super();
     this.root = root;
   }
+
   add(value) {
     const newNode = new Node(value);
     let currentNode = this.root;
@@ -77,6 +78,33 @@ class bst extends binaryTree {
         } else {
           return null;
         }
+      };
+      return traverse(currentNode);
+    }
+  }
+
+  contains(value) {
+    if (this.root === null) return "Empty tree";
+    let currentNode = this.root;
+    if (currentNode.value === value) return true;
+    else {
+      const traverse = (currentNode) => {
+        if (value < currentNode.value) {
+          if (!currentNode.left) return false;
+          else {
+            currentNode = currentNode.left;
+            if (currentNode.value === value) return true;
+            else return traverse(currentNode);
+          }
+        } else {
+          if (currentNode.right === null) return false;
+          else {
+            currentNode = currentNode.right;
+            if (currentNode.value === value) return true;
+            else return traverse(currentNode);
+          }
+        }
+        //return false;
       };
       return traverse(currentNode);
     }

@@ -3,7 +3,7 @@
 const Node = require("../node");
 const { binaryTree } = require("../tree");
 const { bst } = require("../tree");
-let tree, bst1;
+let tree, bst1, testTree1, testTree2;
 
 describe("testing the binary tree", () => {
   beforeAll(() => {
@@ -31,6 +31,8 @@ describe("testing the binary tree", () => {
 
     tree = new binaryTree(one);
     bst1 = new bst(twintyThree);
+    testTree1 = new bst();
+    testTree2 = new bst(ten);
   });
 
   it("testing the tree instance", () => {
@@ -74,5 +76,22 @@ describe("testing the binary search tree", () => {
     expect(bst1.root.left.value).toEqual(8);
     expect(bst1.root.right.value).toEqual(42);
     expect(bst1.preOrder()).toEqual(result);
+  });
+
+  it("testing the contains method", () => {
+    expect(testTree1.contains(1)).toEqual("Empty tree");
+    expect(testTree2.contains(10)).toEqual(true);
+    expect(testTree2.contains(5)).toEqual(false);
+    expect(bst1.contains(23)).toEqual(true);
+    expect(bst1.contains(8)).toEqual(true);
+    expect(bst1.contains(4)).toEqual(true);
+    expect(bst1.contains(16)).toEqual(true);
+    expect(bst1.contains(15)).toEqual(true);
+    expect(bst1.contains(22)).toBeTruthy();
+    expect(bst1.contains(27)).toBeTruthy();
+    expect(bst1.contains(85)).toBeTruthy();
+    expect(bst1.contains(10)).toBeFalsy();
+    expect(bst1.contains(200)).toBe(false);
+    expect(bst1.contains(105)).toBeTruthy();
   });
 });
