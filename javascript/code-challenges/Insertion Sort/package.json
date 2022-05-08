@@ -1,0 +1,12 @@
+{
+  "name": "insertion-sort",
+  "version": "1.0.0",
+  "description": "",
+  "main": "insertionSort.js",
+  "scripts": {
+    "test": "jest --coverage --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
