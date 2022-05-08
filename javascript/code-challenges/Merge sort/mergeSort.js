@@ -25,3 +25,5 @@ function mergeSort(arr) {
   }
   return result.concat(left).concat(right);
 }
+
+module.exports = mergeSort;
