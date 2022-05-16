@@ -1,20 +1,19 @@
+const HashTable = require("../hashtable/hashtable");
+
 function repeatedWord(str) {
-  let array = [];
+  const newHashMap = new HashTable(1024);
   // .toUpperCase to check case sensetive edge cases
   // .split to seperate the array into individual strings (/\W+/)<--removing all non-word characters
   let strArray = str.toLowerCase().split(/\W+/);
-  console.log(strArray);
   let duplicate = null;
-  // console.log(strArray)
 
   for (let i = 0; i < strArray.length; i++) {
-    if (array.includes(strArray[i])) {
+    if (newHashMap.contains(strArray[i])) {
       duplicate = strArray[i];
       break;
     }
-    array.push(strArray[i]);
+    newHashMap.set(strArray[i], strArray[i]);
   }
-  // console.log(strArray)
   return duplicate;
 }
 

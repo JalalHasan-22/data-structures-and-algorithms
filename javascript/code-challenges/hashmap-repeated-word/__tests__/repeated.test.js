@@ -19,4 +19,9 @@ describe("Testing the repeated word function", () => {
       "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
     expect(repeatedWord(str)).toEqual("summer");
   });
+
+  it("Test a repeated word in a string", () => {
+    const str = "This is a string with no repeated words";
+    expect(repeatedWord(str)).toBeNull();
+  });
 });
