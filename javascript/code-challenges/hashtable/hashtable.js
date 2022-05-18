@@ -9,6 +9,7 @@ class HashTable {
   }
 
   hash(key) {
+    key = key.toString();
     return (
       (key.split("").reduce((acc, char) => {
         return acc + char.charCodeAt();
