@@ -87,6 +87,6 @@ myGraph.addEdge(four, five, 10);
 myGraph.addEdge(five, three, 10);
 
 // console.log(myGraph.bft(zero));
-// console.log(myGraph.getNeighbors(zero));
+console.log(myGraph.getNeighbors(one));
 
 module.exports = Graph;

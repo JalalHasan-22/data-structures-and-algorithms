@@ -36,7 +36,7 @@ describe("Testing the graph data structure", () => {
   });
 
   it("Testing the get all nodes method", () => {
-    const allNodes = myGraph.getVertexes();
+    const allNodes = myGraph.getVertices();
     expect(allNodes).toBeInstanceOf(Object);
     expect(allNodes.size).toEqual(6);
   });

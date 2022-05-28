@@ -32,7 +32,7 @@ class Graph {
   }
 
   //get All the nodes of the graph
-  getVertexes() {
+  getVertices() {
     return this.adjacencyList;
   }
 
