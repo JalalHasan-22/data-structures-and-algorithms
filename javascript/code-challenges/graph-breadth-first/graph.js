@@ -5,11 +5,13 @@ const Edge = require("./edge");
 class Graph {
   constructor() {
     this.adjacencyList = new Map();
+    this.size = 0;
   }
 
   // Adding a vertex
   add(vertex) {
     this.adjacencyList.set(vertex, []);
+    this.size += 1;
   }
 
   // Getting the neighbors array
@@ -32,6 +34,36 @@ class Graph {
     // Adding an edge from the end to the start as well
     const endAdjacents = this.getNeighbors(end);
     endAdjacents.push(new Edge(start, weight));
+  }
+
+  // Implementing the Breadth First Traversal using a set for previously visited nodes
+
+  bft(startNode) {
+    const nodes = [];
+    const breadth = [];
+    const visited = new Set();
+
+    breadth.push(startNode);
+    nodes.push(startNode.value);
+    visited.add(startNode);
+
+    while (breadth.length) {
+      const currentNode = breadth.shift();
+      const neighbors = this.getNeighbors(currentNode);
+
+      for (let neighbor of neighbors) {
+        const neighborNode = neighbor.vertex;
+
+        if (visited.has(neighborNode)) {
+          continue;
+        } else {
+          visited.add(neighborNode);
+          nodes.push(neighborNode.value);
+        }
+        breadth.push(neighborNode);
+      }
+    }
+    return nodes;
   }
 }
 
