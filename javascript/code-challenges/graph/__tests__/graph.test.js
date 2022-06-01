@@ -12,6 +12,9 @@ describe("Testing the graph data structure", () => {
   const four = new Vertex(4);
   const five = new Vertex(5);
 
+  //for testing CC37 only
+  const six = new Vertex(6);
+
   myGraph.addVertex(zero);
   myGraph.addVertex(one);
   myGraph.addVertex(two);
@@ -55,4 +58,20 @@ describe("Testing the graph data structure", () => {
   });
 
   // By testing this, the addEdge method has been already tested implicitly.
+
+  // Testing for code challenge 37
+  it("Testing the business trip function with one node not added to the graph", () => {
+    expect(myGraph.businessTrip([one, two, six])).toBeNull();
+  });
+
+  it("Testing the business trip function with added nodes", () => {
+    expect(myGraph.businessTrip([zero, two])).toEqual(10);
+    expect(myGraph.businessTrip([one, two])).toBeNull();
+    expect(myGraph.businessTrip([zero, two, three])).toEqual(20);
+    expect(myGraph.businessTrip([zero, two, five])).toBeNull();
+    expect(myGraph.businessTrip([zero, two, four])).toEqual(20);
+    expect(myGraph.businessTrip([zero, two, four, five])).toEqual(30);
+    expect(myGraph.businessTrip([five, three])).toEqual(10);
+    expect(myGraph.businessTrip([four, five])).toEqual(10);
+  });
 });
