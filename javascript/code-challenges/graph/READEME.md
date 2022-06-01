@@ -23,3 +23,7 @@ Below you will find the whiteboard image for this coding challenge as well as th
 ### 4. getVertexes
 
 ![getVertices](../../assets/getVertices.jpg)
+
+## 37 Business trip whiteboard
+
+![bt](../../assets/business%20trip.jpg)
