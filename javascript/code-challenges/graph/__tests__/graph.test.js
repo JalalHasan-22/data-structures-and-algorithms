@@ -74,4 +74,17 @@ describe("Testing the graph data structure", () => {
     expect(myGraph.businessTrip([five, three])).toEqual(10);
     expect(myGraph.businessTrip([four, five])).toEqual(10);
   });
+
+  // Tests for code challenge 38 // depth first traversal
+  it("Testing the depth first traversal method", () => {
+    const result = myGraph.depthFirst(zero);
+    expect(result).toEqual([
+      { value: 0 },
+      { value: 2 },
+      { value: 4 },
+      { value: 5 },
+      { value: 3 },
+      { value: 1 },
+    ]);
+  });
 });
