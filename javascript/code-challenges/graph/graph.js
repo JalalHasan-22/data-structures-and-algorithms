@@ -75,6 +75,49 @@ class Graph {
     }
     return sumOfWeights;
   }
+
+  // Code challenge Class 38
+  // Graph Depth first traversal
+
+  depthFirst(vertex) {
+    if (!vertex) return null;
+
+    const queue = [];
+    const visited = new Set();
+
+    queue.push(vertex);
+    while (queue.length) {
+      const currentElement = queue[queue.length - 1];
+
+      let neighbors = this.getNeighbors(currentElement);
+
+      let hasUnvisitedNeighbors = false;
+
+      for (let edge of neighbors) {
+        let neighbor = edge.vertex;
+
+        if (!visited.has(neighbor)) {
+          hasUnvisitedNeighbors = true;
+          break;
+        }
+      }
+
+      if (hasUnvisitedNeighbors) {
+        visited.add(currentElement);
+        for (let edge of neighbors) {
+          let neighbor = edge.vertex;
+
+          if (!visited.has(neighbor)) {
+            queue.push(neighbor);
+          }
+        }
+      } else {
+        visited.add(currentElement);
+        queue.pop();
+      }
+    }
+    return [...visited];
+  }
 }
 
 module.exports = Graph;
