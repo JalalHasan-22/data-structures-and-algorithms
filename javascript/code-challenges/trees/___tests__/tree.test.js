@@ -94,4 +94,8 @@ describe("testing the binary search tree", () => {
     expect(bst1.contains(200)).toBe(false);
     expect(bst1.contains(105)).toBeTruthy();
   });
+
+  it("Testing the Breadth First Traversal", () => {
+    expect(tree.breadthFirst()).toStrictEqual([1, 2, 3, 6, 4, 5, 7, 10, 8, 9]);
+  });
 });
